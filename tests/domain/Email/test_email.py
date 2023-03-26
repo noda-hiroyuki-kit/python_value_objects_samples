@@ -6,4 +6,4 @@ class Test_Email:
         email = Email(
             local_part='test'
         )
-        assert email.local_part == 'test'
+        assert email._parts == 'test'
