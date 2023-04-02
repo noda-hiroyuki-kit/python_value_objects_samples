@@ -1,4 +1,10 @@
 class Email:
+
+    @classmethod
+    def from_text(cls, address):
+        local_part, _, domain_part = address.partition('@')
+        return cls(local_part, domain_part)
+
     def __init__(self, local_part, domain_part):
         if len(local_part) + len(domain_part) > 255:
             raise ValueError("Email addresses too long")
