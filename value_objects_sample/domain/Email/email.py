@@ -2,6 +2,8 @@ class Email:
 
     @classmethod
     def from_text(cls, address):
+        if '@' not in address:
+            raise ValueError("Email addresses must contains '@'")
         local_part, _, domain_part = address.partition('@')
         return cls(local_part, domain_part)
 
