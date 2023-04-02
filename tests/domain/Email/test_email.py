@@ -9,6 +9,11 @@ class Test_Email:
         assert email._parts[0] == 'test'
         assert email._parts[1] == 'tester.com'
 
+    def test_from_textメソッドはアットマークがない引数の時はValueErrorを返す(self):
+        with pytest.raises(ValueError) as e:
+            email = Email.from_text('test_tester.com')
+            assert str(e.value) == "Email addresses must contains '@'"
+            
     def test_コンストラクタはインスタンスを生成する(self):
         email = Email(
             local_part='test',
