@@ -39,3 +39,6 @@ class Test_Email:
             )
             assert str(e.value) == 'Email addresses too long'
 
+    def test_strは登録したメールアドレスを返す(self):
+        email = Email.from_text('test@tester.com')
+        assert str(email) == 'test@tester.com'
