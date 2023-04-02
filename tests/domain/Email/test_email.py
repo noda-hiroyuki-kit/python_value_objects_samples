@@ -5,7 +5,7 @@ from value_objects_sample.domain.Email.email import Email
 
 class Test_Email:
     def test_from_textメソッドはインスタンスを生成する(self):
-        email = Email.from_text('text@tester.com')
+        email = Email.from_text('test@tester.com')
         assert email._parts[0] == 'test'
         assert email._parts[1] == 'tester.com'
 
