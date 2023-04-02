@@ -4,6 +4,11 @@ from value_objects_sample.domain.Email.email import Email
 
 
 class Test_Email:
+    def test_from_textメソッドはインスタンスを生成する(self):
+        email = Email.from_text('text@tester.com')
+        assert email._parts[0] == 'test'
+        assert email._parts[1] == 'tester.com'
+
     def test_コンストラクタはインスタンスを生成する(self):
         email = Email(
             local_part='test',
