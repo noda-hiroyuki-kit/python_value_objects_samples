@@ -17,4 +17,6 @@ class Email:
 
     def __repr__(self) -> str:
         return "Email(local_part={!r}, domain_part={!r})".format(*self._parts)
-    
+
+    def __eq__(self, rhs) -> bool:
+        return self._parts == rhs._parts

@@ -51,3 +51,9 @@ class Test_Email:
         email1 = Email.from_text('test@tester.com')
         email2 = Email.from_text('test@tester.com')
         assert email1 == email2
+
+    def test_Emailクラスとメールアドレスの比較はErrorを返す(self):
+        email1 = Email.from_text('test@tester.com')
+        email2 = 'test@tester.com'
+        with pytest.raises(NotImplemented) as e:
+            result = (email1 == email2)
