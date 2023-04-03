@@ -14,3 +14,7 @@ class Email:
 
     def __str__(self) -> str:
         return '@'.join(self._parts)
+
+    def __repr__(self) -> str:
+        return "Email(local_part={!r}, domain_part={!r})".format(*self._parts)
+    
