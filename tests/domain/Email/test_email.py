@@ -42,3 +42,7 @@ class Test_Email:
     def test_strは登録したメールアドレスを返す(self):
         email = Email.from_text('test@tester.com')
         assert str(email) == 'test@tester.com'
+
+    def test_reprは指定フォーマットの文字列を返す(self):
+        email = Email.from_text('test@tester.com')
+        assert email.__repr__() == 'Email(local_part=test, domain_part=tester.com)'
