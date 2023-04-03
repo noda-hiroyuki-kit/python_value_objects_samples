@@ -46,3 +46,8 @@ class Test_Email:
     def test_reprは指定フォーマットの文字列を返す(self):
         email = Email.from_text('test@tester.com')
         assert email.__repr__() == "Email(local_part='test', domain_part='tester.com')"
+
+    def test_同じメールアドレスの場合は同じと評価する(self):
+        email1 = Email.from_text('test@tester.com')
+        email2 = Email.from_text('test@tester.com')
+        assert email1 == email2
