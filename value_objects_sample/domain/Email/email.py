@@ -22,3 +22,6 @@ class Email:
         if not isinstance(rhs, Email):
             return NotImplemented
         return self._parts == rhs._parts
+
+    def __ne__(self, rhs) -> bool:
+        return not (self == rhs)
