@@ -67,4 +67,4 @@ class Test_Email:
         def test_Emailクラスの違うメールアドレスの場合は違うと評価する(self):
             email1 = Email.from_text('test@tester.com')
             email2 = Email.from_text('test2@tester.com')
-            assert email1.__ne__(email2) == False 
+            assert email1 != email2
