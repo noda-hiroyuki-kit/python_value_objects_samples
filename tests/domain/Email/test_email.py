@@ -62,3 +62,9 @@ class Test_Email:
             email2 = 'test@tester.com'
             result = email1.__eq__(email2)
             assert result == NotImplemented
+
+    class Test___ne__メソッド:
+        def test_Emailクラスの違うメールアドレスの場合は違うと評価する(self):
+            email1 = Email.from_text('test@tester.com')
+            email2 = Email.from_text('test2@tester.com')
+            assert email1.__ne__(email2) == False 
