@@ -19,4 +19,6 @@ class Email:
         return "Email(local_part={!r}, domain_part={!r})".format(*self._parts)
 
     def __eq__(self, rhs) -> bool:
+        if not isinstance(rhs, Email):
+            return NotImplemented
         return self._parts == rhs._parts
