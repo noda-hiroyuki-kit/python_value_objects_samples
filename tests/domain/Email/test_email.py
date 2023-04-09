@@ -78,3 +78,8 @@ class Test_Email:
         def test_localでアットマーク前の文字列を返す(self):
             email = Email.from_text('test@tester.com')
             assert email.local == 'test'
+
+    class Test_domainプロパティ:
+        def test_domainでアットマーク後の文字列を返す(self):
+            email = Email.from_text('test@tester.com')
+            assert email.domain == 'tester.com'
