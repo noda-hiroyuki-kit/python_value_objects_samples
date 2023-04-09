@@ -25,3 +25,6 @@ class Email:
 
     def __ne__(self, rhs) -> bool:
         return not (self == rhs)
+
+    def __hash__(self) -> str:
+        return hash(self._parts)
