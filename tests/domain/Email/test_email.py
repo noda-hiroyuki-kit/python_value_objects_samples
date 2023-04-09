@@ -73,3 +73,8 @@ class Test_Email:
         def test_hashをかけた文字列を返す(self):
             email = Email.from_text('test@tester.com')
             assert hash(email) == hash(('test', 'tester.com'))
+
+    class Test_localプロパティ:
+        def test_localでアットマーク前の文字列を返す(self):
+            email = Email.from_text('test@tester.com')
+            assert email.local == 'test'
