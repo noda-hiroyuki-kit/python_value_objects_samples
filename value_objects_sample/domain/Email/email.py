@@ -36,3 +36,7 @@ class Email:
     @property
     def domain(self):
         return self._parts[1]
+
+    def replace(self, local: str = None, domain: str = None):
+        return Email(local_part=local or self._parts[0],
+                     domain_part=domain or self._parts[1])
