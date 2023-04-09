@@ -68,3 +68,8 @@ class Test_Email:
             email1 = Email.from_text('test@tester.com')
             email2 = Email.from_text('test2@tester.com')
             assert email1 != email2
+
+    class Test__hash__メソッド:
+        def test_hashをかけた文字列を返す(self):
+            email = Email.from_text('test@tester.com')
+            assert email.__hash__() == hash(('test', 'tester.com'))
