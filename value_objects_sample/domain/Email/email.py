@@ -32,3 +32,7 @@ class Email:
     @property
     def local(self):
         return self._parts[0]
+
+    @property
+    def domain(self):
+        return self._parts[1]
