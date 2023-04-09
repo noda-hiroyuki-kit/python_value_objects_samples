@@ -28,3 +28,7 @@ class Email:
 
     def __hash__(self) -> str:
         return hash(self._parts)
+
+    @property
+    def local(self):
+        return self._parts[0]
