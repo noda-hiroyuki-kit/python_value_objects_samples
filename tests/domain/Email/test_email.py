@@ -83,3 +83,19 @@ class Test_Email:
         def test_domainでアットマーク後の文字列を返す(self):
             email = Email.from_text('test@tester.com')
             assert email.domain == 'tester.com'
+
+    class Test_replaceメソッド:
+        def test_local変更後の新しいEmailクラスを返す(self):
+            email_before = Email.from_text('before@tester.com')
+            email_after = Email.from_text('after@tester.com')
+            assert email_before.replace(local='after') == email_after
+
+        def test_domain変更後の新しいEmailクラスを返す(self):
+            email_before = Email.from_text('test@before.com')
+            email_after = Email.from_text('test@after.com')
+            assert email_before.replace(domain='after.com') == email_after
+
+        def test_local_domain変更後の新しいEmailクラスを返す(self):
+            email_before = Email.from_text('before@before.com')
+            email_after = Email.from_text('after@after.com')
+            assert email_before.replace('after', 'after.com') == email_after
